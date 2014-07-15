@@ -13,7 +13,7 @@ class Monologue::Post < ActiveRecord::Base
   validates :title, :content, :url, :published_at, presence: true
   validates :url, uniqueness: true
   validate :url_do_not_start_with_slash
-
+  mount_uploader :image, BlogPhotoUploader
   def tag_list= tags_attr
     self.tag!(tags_attr.split(","))
   end
