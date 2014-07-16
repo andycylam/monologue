@@ -5,6 +5,7 @@
 <%= post.text_field :published_at, label:  t(".published_at"), data: {datepicker: "datepicker"}, value: post.object.published_at.nil? ? "" : post.object.published_at.strftime("%Y-%m-%d") %>
 <%= post.text_field :tag_list, label:  raw(t(".tags")) %>
 <%= post.file_field :image, type: :file %>
+<%= post.hidden_field :image_cache %>
 <%= post.check_box :published, label:  t(".published") %>
 
 <div class="form-actions">
